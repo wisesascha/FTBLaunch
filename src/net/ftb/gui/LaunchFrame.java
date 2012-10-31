@@ -91,7 +91,7 @@ public class LaunchFrame extends JFrame {
 	private ModpacksPane modPacksPane;
 	private JPanel mapsPane;
 	private JPanel tpPane;
-
+ 
 	/**
 	 * an array of all mods to be added to classpath
 	 */
@@ -111,7 +111,7 @@ public class LaunchFrame extends JFrame {
 	/**
 	 * the things to go on the footer
 	 */
-	private JLabel footerLogo = new JLabel(new ImageIcon(this.getClass().getResource("/image/logo_ftb.png")));
+	private JLabel footerLogo = new JLabel(new ImageIcon(this.getClass().getResource("/image/logo.png")));
 	private JLabel footerCreeper = new JLabel(new ImageIcon(this.getClass().getResource("/image/logo_creeperHost.png")));
 	private JButton launch = new JButton("Launch");
 	private static String[] dropdown_ = {"Select Username", "Create Username"};
@@ -519,7 +519,7 @@ public class LaunchFrame extends JFrame {
 
 		String date = sdf.format(new Date());
 
-		String resolved = "http://repo.creeperhost.net/direct/FTB2/" + md5("mcepoch1" + date) + "/" + file;
+		String resolved = "http://xylocraft.com/ModPack/" +file;
 		System.out.println(resolved);
 
 		return resolved; 
