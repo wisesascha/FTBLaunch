@@ -30,7 +30,7 @@ public class NewsPane extends JPanel implements ILauncherPane {
 	@Override
 	public void onVisible() {
 		try {
-			news.setPage("http://feed-the-beast.com/lanuchernews.php");
+			news.setPage("http://xylocraft.com/news.html");
 		} catch (IOException e1) { e1.printStackTrace(); }
 	}
 }
