@@ -42,8 +42,8 @@ public class CreateProfile extends JDialog {
 	public CreateProfile() {
 		setFont(new Font("a_FuturaOrto", Font.PLAIN, 12));
 		setResizable(false);
-		setTitle("Feed the Beast Launcher");
-		setIconImage(Toolkit.getDefaultToolkit().getImage(this.getClass().getResource("/image/logo_ftb.png")));
+		setTitle("Xylocraft Tech Pack");
+		setIconImage(Toolkit.getDefaultToolkit().getImage(this.getClass().getResource("/image/logo.png")));
 
 		try {
 			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
