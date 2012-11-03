@@ -4,7 +4,7 @@
 
   <groupId>net.ftb</groupId>
   <artifactId>ftblaunch</artifactId>
-  <version>1.0-SNAPSHOT</version>
+  <version>1.1-SNAPSHOT</version>
   <packaging>jar</packaging>
   <properties>
     <buildNumber>0</buildNumber>
@@ -70,7 +70,7 @@
               <jre>
                 <minVersion>1.6.0</minVersion>
               </jre>
-              <icon>${basedir}/res/image/logo_ftb.ico</icon>
+              <icon>${basedir}/res/image/app_icon.ico</icon>
               <versionInfo>
                 <fileVersion>2.0.0.${buildNumber}</fileVersion>
                 <txtFileVersion>2.0.0.${buildNumber}</txtFileVersion>
