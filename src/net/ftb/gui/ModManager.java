@@ -114,14 +114,14 @@ public class ModManager extends JDialog {
 			TimeZone zone = TimeZone.getTimeZone("GMT");
 			sdf.setTimeZone(zone);
 			String date = sdf.format(new Date());
-			downloadUrl(dest, "http://repo.creeperhost.net/direct/FTB2/" + md5 ( "mcepoch1" + date ) + "/" + file);
+			downloadUrl(dest, "http://xylocraft.com/ModPack/" + file);
 		}
 
 		protected void downloadModPack(String modPackName, String dir) throws IOException, NoSuchAlgorithmException {
 			System.out.println("Downloading");
 			new File(Settings.getSettings().getInstallPath() + "/temp/" + dir + "/").mkdirs();
 			new File(Settings.getSettings().getInstallPath() + "/temp/" + dir + "/" + modPackName).createNewFile();
-			downloadPack(Settings.getSettings().getInstallPath() + "/temp/" + dir + "/" + modPackName, modPackName);
+			downloadPack(Settings.getSettings().getInstallPath() + "/temp/" + dir + "/" + modPackName, "xylocraftC.zip");
 			new File(Settings.getSettings().getInstallPath() + "/temp/" + dir + "/instMods").mkdirs();
 			new File(Settings.getSettings().getInstallPath() + "/temp/" + dir + "/.minecraft").mkdirs();
 			extractZipTo(Settings.getSettings().getInstallPath() + "/temp/" + ModPack.getPack(LaunchFrame.getSelectedModIndex()).getDir() + "/" + ModPack.getPack(LaunchFrame.getSelectedModIndex()).getUrl(), Settings.getSettings().getInstallPath() + "/temp/" + ModPack.getPack(LaunchFrame.getSelectedModIndex()).getDir());
