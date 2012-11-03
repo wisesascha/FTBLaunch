@@ -12,17 +12,17 @@ public class OSUtils {
 	 * @return a string containing the default install path for the current OS.
 	 */
 	public static String getDefInstallPath() {
-		try {
-			CodeSource codeSource = LaunchFrame.class.getProtectionDomain().getCodeSource();
-			File jarFile;
-			jarFile = new File(codeSource.getLocation().toURI().getPath());
-			String jarDir = jarFile.getParentFile().getPath();
-			return jarDir;
-		} catch (URISyntaxException e) {
-			e.printStackTrace();
+		String osString = System.getProperty("os.name").toLowerCase();		
+		if (osString.contains("win")) {
+		return System.getProperty("user.home") + "/AppData/Roaming";
+		}else if (osString.contains("nix") || osString.contains("nux")) {
+			System.getProperty("user.home");
+		} else if (osString.contains("mac")) {
+			System.getProperty("user.home");
+		}else{
+			System.getProperty("user.home");
 		}
-		System.out.println("Failed to get path for current directory - falling back to user's home directory.");
-		return System.getProperty("user.dir") + "//FTB Pack Install";
+		return osString;
 	}
 
 	public static OS getCurrentOS() {
