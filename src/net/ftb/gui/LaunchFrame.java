@@ -112,7 +112,7 @@ public class LaunchFrame extends JFrame {
 	 * the things to go on the footer
 	 */
 	private JLabel footerLogo = new JLabel(new ImageIcon(this.getClass().getResource("/image/logo.png")));
-	private JLabel footerCreeper = new JLabel(new ImageIcon(this.getClass().getResource("/image/logo_creeperHost.png")));
+	//private JLabel footerCreeper = new JLabel(new ImageIcon(this.getClass().getResource("/image/logo_creeperHost.png")));
 	private JButton launch = new JButton("Launch");
 	private static String[] dropdown_ = {"Select Username", "Create Username"};
 	private static JComboBox users;
@@ -203,8 +203,8 @@ public class LaunchFrame extends JFrame {
 	public LaunchFrame(final int tab) {
 		setFont(new Font("a_FuturaOrto", Font.PLAIN, 12));
 		setResizable(false);
-		setTitle("Feed the Beast Launcher Beta v0.1.1");
-		setIconImage(Toolkit.getDefaultToolkit().getImage(this.getClass().getResource("/image/logo_ftb.png")));
+		setTitle("Xylocraft Tech Pack");
+		setIconImage(Toolkit.getDefaultToolkit().getImage(this.getClass().getResource("/image/logo.png")));
 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 850, 480);
@@ -224,7 +224,7 @@ public class LaunchFrame extends JFrame {
 			@Override 
 			public void mouseClicked(MouseEvent arg0) {
 				try {
-					Hlink(arg0, new URI("http://www.feed-the-beast.com"));
+					Hlink(arg0, new URI("http://xylocraft.com"));
 				} catch (URISyntaxException e) {
 					e.printStackTrace();
 				}
@@ -234,8 +234,8 @@ public class LaunchFrame extends JFrame {
 			@Override public void mouseExited(MouseEvent arg0) { }
 			@Override public void mouseEntered(MouseEvent arg0) { }
 		});
-		footerCreeper.setBounds(72, 20, 132, 42);
-		footerCreeper.addMouseListener(new MouseListener() {
+		//footerCreeper.setBounds(72, 20, 132, 42);
+		/*footerCreeper.addMouseListener(new MouseListener() {
 			@Override 
 			public void mouseClicked(MouseEvent arg0) {
 				try {
@@ -249,7 +249,7 @@ public class LaunchFrame extends JFrame {
 			@Override public void mouseExited(MouseEvent arg0) { }
 			@Override public void mouseEntered(MouseEvent arg0) { }
 		});
-
+*/
 		try {
 			userManager.read();
 		} catch (IOException e1) { e1.printStackTrace(); }
@@ -307,12 +307,12 @@ public class LaunchFrame extends JFrame {
 		});
 
 		footerLogo.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-		footerCreeper.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		//footerCreeper.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		
 		footer.add(edit);
 		footer.add(users);
 		footer.add(footerLogo);
-		footer.add(footerCreeper);
+		//footer.add(footerCreeper);
 		footer.add(launch);
 		
 		newsPane = new NewsPane();
@@ -334,15 +334,6 @@ public class LaunchFrame extends JFrame {
 
 		tabbedPane.add(modPacksPane, 2);
 		tabbedPane.setIconAt(2, new ImageIcon(this.getClass().getResource("/image/tabs/modpacks.png")));
-
-		tabbedPane.add(mapsPane, 3);
-		tabbedPane.setIconAt(3, new ImageIcon(this.getClass().getResource("/image/tabs/maps.png")));
-
-		tabbedPane.add(tpPane, 4);
-		tabbedPane.setIconAt(4, new ImageIcon(this.getClass().getResource("/image/tabs/texturepacks.png")));
-
-		tabbedPane.setEnabledAt(3, false);
-		tabbedPane.setEnabledAt(4, false);
 
 		tabbedPane.setSelectedIndex(tab);
 		
@@ -593,7 +584,7 @@ public class LaunchFrame extends JFrame {
 	protected void launchMinecraft(String workingDir, String username, String password) {
 		try {
 			System.out.println("Loading jars...");
-			String[] jarFiles = new String[] { "minecraftforge-universal-6.0.1.353.zip","minecraft.jar", "lwjgl.jar", "lwjgl_util.jar","jinput.jar" };
+			String[] jarFiles = new String[] { "1Forge.jar","minecraft.jar", "lwjgl.jar", "lwjgl_util.jar","jinput.jar" };
 			URL[] urls = new URL[jarFiles.length];
 
 			for (int i = 0; i < urls.length; i++) {
@@ -876,8 +867,8 @@ public class LaunchFrame extends JFrame {
 		copyFile(minecraft, mcbackup);
 		copyFolder(new File(Settings.getSettings().getInstallPath() + "/temp/" + ModPack.getPack(modPacksPane.getSelectedModIndex()).getDir() + "/.minecraft"), 
 				new File(Settings.getSettings().getInstallPath() + "/" + ModPack.getPack(modPacksPane.getSelectedModIndex()).getDir() + "/.minecraft"));
-	 	copyFile(new File(Settings.getSettings().getInstallPath() + "/temp/" + ModPack.getPack(modPacksPane.getSelectedModIndex()).getDir() + "/instMods/minecraftforge-universal-6.0.1.353.zip"), 
-	 			new File(Settings.getSettings().getInstallPath() + "/" + ModPack.getPack(modPacksPane.getSelectedModIndex()).getDir() + "/.minecraft/bin/minecraftforge-universal-6.0.1.353.zip"));
+	 	copyFile(new File(Settings.getSettings().getInstallPath() + "/temp/" + ModPack.getPack(modPacksPane.getSelectedModIndex()).getDir() + "/instMods/1Forge.jar"), 
+	 			new File(Settings.getSettings().getInstallPath() + "/" + ModPack.getPack(modPacksPane.getSelectedModIndex()).getDir() + "/.minecraft/bin/1Forge.jar"));
 	}
 
 	/**
