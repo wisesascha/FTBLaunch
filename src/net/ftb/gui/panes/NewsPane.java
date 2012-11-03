@@ -22,7 +22,7 @@ public class NewsPane extends JPanel implements ILauncherPane {
 		news.setEditable(false);
 		newsPanel = new JScrollPane(news);
 		newsPanel.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
-		newsPanel.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+		newsPanel.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
 		newsPanel.setBounds(10, 10, 790, 290);
 		this.add(newsPanel);
 	}
