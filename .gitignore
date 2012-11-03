@@ -3,3 +3,4 @@ bin/
 .metadata/
 ftblaunch.cfg
 target/
+*Thumbs.db
